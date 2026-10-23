@@ -14,8 +14,8 @@ export function Logo({ tone = "light", compact = false }: LogoProps) {
       <Image
         src="/logo-democrata.png"
         alt="Democrata 35"
-        width={64}
-        height={64}
+        width={40}
+        height={88}
         className="shrink-0"
         priority
       />
