@@ -1,6 +1,86 @@
+import Image from "next/image";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
-import { landmarks } from "@/lib/content";
+
+const fotos = [
+  {
+    src: "/guaiba-fotos/eu-amo-guaiba.jpg",
+    kicker: "Orla",
+    titulo: "Eu amo Guaíba",
+    legenda: "O monumento na beira do lago, com a Lagoa dos Patos ao fundo.",
+    span: "lg:col-span-2",
+  },
+  {
+    src: "/guaiba-fotos/vista-panoramica.jpg",
+    kicker: "Cidade",
+    titulo: "Vista panorâmica",
+    legenda: "O centro histórico visto de cima, com o lago dominando o horizonte.",
+    span: "",
+  },
+  {
+    src: "/guaiba-fotos/praia-lago.jpg",
+    kicker: "Natureza",
+    titulo: "Beira do lago",
+    legenda: "A orla de Guaíba, com a Arauco ao fundo — natureza e indústria lado a lado.",
+    span: "",
+  },
+  {
+    src: "/guaiba-fotos/orla-restaurante.jpg",
+    kicker: "Lazer",
+    titulo: "Restaurante na orla",
+    legenda: "Gastronomia com vista para o lago, símbolo da vida cotidiana guaibense.",
+    span: "",
+  },
+  {
+    src: "/guaiba-fotos/igreja-matriz.jpg",
+    kicker: "Patrimônio",
+    titulo: "Igreja Matriz",
+    legenda: "O neo-gótico da Matriz define o skyline do centro histórico.",
+    span: "",
+  },
+  {
+    src: "/guaiba-fotos/cipreste-farroupilha.jpg",
+    kicker: "História",
+    titulo: "Cipreste Farroupilha",
+    legenda: "Árvore secular que testemunhou a articulação da Revolução Farroupilha.",
+    span: "",
+  },
+  {
+    src: "/guaiba-fotos/vitrine-cultural.jpg",
+    kicker: "Cultura",
+    titulo: "Berço da Revolução Farroupilha",
+    legenda: "A Vitrine Cultural preserva a memória de um dos marcos do gauchismo.",
+    span: "",
+  },
+  {
+    src: "/guaiba-fotos/sitio-historico.jpg",
+    kicker: "Memória",
+    titulo: "Sítio Histórico",
+    legenda: "Interior do museu: pedras coloniais, documentos e a linha do tempo da cidade.",
+    span: "",
+  },
+  {
+    src: "/guaiba-fotos/arauco-aerea.jpg",
+    kicker: "Economia",
+    titulo: "Complexo Arauco",
+    legenda: "Vista aérea da maior geradora de empregos do município, na margem do lago.",
+    span: "lg:col-span-2",
+  },
+  {
+    src: "/guaiba-fotos/bonde-externo.jpg",
+    kicker: "Turismo",
+    titulo: "Terra é Guaíba",
+    legenda: "O bonde turístico percorre os pontos históricos e culturais da cidade.",
+    span: "",
+  },
+  {
+    src: "/guaiba-fotos/prefeitura.jpg",
+    kicker: "Gestão",
+    titulo: "Prefeitura Municipal",
+    legenda: "A sede do poder executivo de Guaíba, onde a política local toma forma.",
+    span: "",
+  },
+];
 
 export function SobreGuaiba() {
   return (
@@ -12,7 +92,7 @@ export function SobreGuaiba() {
           description="Município da Região Metropolitana de Porto Alegre e da Costa Doce, Guaíba leva o nome das águas que a definem. O gentílico é guaibense."
         />
 
-        <div className="mt-12 grid gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-16">
+        <div className="mt-12 grid gap-5 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-16">
           <Reveal delay={0.05}>
             <div className="space-y-5 text-base leading-relaxed text-ink/80 sm:text-[1.05rem]">
               <p>
@@ -60,29 +140,39 @@ export function SobreGuaiba() {
           </Reveal>
         </div>
 
-        <div className="mt-14 flex flex-wrap justify-center gap-4">
-          {landmarks.map((place, index) => (
+        {/* Galeria fotográfica */}
+        <div className="mt-14 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {fotos.map((foto, i) => (
             <Reveal
-              key={place.title}
-              delay={index * 0.06}
-              className="w-full md:w-[calc(50%-0.5rem)] xl:w-[calc(33.333%-0.7rem)]"
+              key={foto.src}
+              delay={i * 0.04}
+              className={foto.span}
             >
-              <article className="flex h-full flex-col border border-ink/10 bg-cream p-6 transition-colors duration-300 hover:border-democrata-blue/40">
-                <div className="flex items-center justify-between gap-3">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-democrata-blue">{place.kicker}</p>
-                  <span className="font-display text-2xl text-democrata-blue/30">0{index + 1}</span>
+              <div className="group relative overflow-hidden bg-ink/10" style={{ aspectRatio: foto.span ? "16/7" : "4/3" }}>
+                <Image
+                  src={foto.src}
+                  alt={foto.titulo}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+                {/* Overlay com legenda */}
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                <div className="absolute bottom-0 left-0 right-0 translate-y-2 p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-democrata-green">{foto.kicker}</p>
+                  <p className="mt-1 font-display text-xl leading-tight text-white">{foto.titulo}</p>
+                  <p className="mt-1 text-xs leading-relaxed text-white/80">{foto.legenda}</p>
                 </div>
-                <h3 className="mt-6 font-display text-3xl leading-tight text-ink">{place.title}</h3>
-                <p className="mt-4 text-sm leading-relaxed text-ink/70">{place.text}</p>
-              </article>
+                {/* Kicker sempre visível no canto */}
+                <div className="absolute left-3 top-3">
+                  <span className="bg-democrata-blue/90 px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-white">
+                    {foto.kicker}
+                  </span>
+                </div>
+              </div>
             </Reveal>
           ))}
         </div>
-
-        <p className="mt-8 text-xs leading-relaxed text-ink/50">
-          Marcos históricos conforme o registro do IBGE e a memória oficial do município. O quinto cartão trata da
-          cheia de 2024 como fato recente da vida cívica, não como promessa de governo.
-        </p>
       </div>
     </section>
   );
