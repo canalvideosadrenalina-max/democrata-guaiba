@@ -8,12 +8,12 @@ export function LiderancaLocal() {
       <div className="shell">
         <div className="grid items-stretch gap-8 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] lg:gap-0">
           <Reveal className="lg:pr-10">
-            <figure className="relative h-full min-h-[34rem] overflow-hidden border border-democrata-blue/20 bg-democrata-blue shadow-dossier">
+            <figure className="relative h-full min-h-[22rem] overflow-hidden border border-democrata-blue/20 bg-democrata-blue shadow-dossier">
               <Image
                 src="/dr-heitor.jpg"
                 alt="Dr. Heitor de Abreu Oliveira — Presidente do PSD Guaíba"
                 fill
-                className="object-cover object-top"
+                className="object-cover object-[center_15%]"
                 sizes="(max-width: 1024px) 100vw, 40vw"
                 priority
               />
