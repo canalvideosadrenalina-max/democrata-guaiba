@@ -60,10 +60,10 @@ export function Hero() {
 
           <Reveal delay={0.18}>
             <aside className="relative border border-white/15 bg-white/[0.03] p-6 sm:p-8">
-              {/* Logo decorativo no fundo */}
-              <div className="pointer-events-none absolute -right-8 -top-8 h-72 w-72 select-none opacity-[0.08] mix-blend-luminosity">
+              {/* Logo decorativo no fundo — igual ao "35" gigante do hero */}
+              <div className="pointer-events-none absolute -bottom-16 -right-12 h-80 w-80 select-none opacity-[0.12] mix-blend-screen">
                 <Image
-                  src="/logo-democrata-white.png"
+                  src="/logo-democrata.png"
                   alt=""
                   fill
                   className="object-contain"
