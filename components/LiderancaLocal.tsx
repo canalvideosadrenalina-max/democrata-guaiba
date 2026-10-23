@@ -6,30 +6,25 @@ export function LiderancaLocal() {
   return (
     <section id="lideranca" className="scroll-mt-24 bg-paper py-24 sm:py-32">
       <div className="shell">
-        <div className="grid items-stretch gap-8 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] lg:gap-0">
-          <Reveal className="lg:pr-10">
-            <figure className="relative h-full min-h-[22rem] overflow-hidden border border-democrata-blue/20 bg-democrata-blue shadow-dossier">
-              <Image
-                src="/dr-heitor.jpg"
-                alt="Dr. Heitor de Abreu Oliveira — Presidente do PSD Guaíba"
-                fill
-                className="object-cover object-[center_15%]"
-                sizes="(max-width: 1024px) 100vw, 40vw"
-                priority
-              />
-              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-democrata-blue via-democrata-blue/85 to-transparent p-6 pt-20">
-                <p className="text-[10px] uppercase tracking-[0.24em] text-democrata-white">Presidente Municipal</p>
-                <p className="mt-2 font-display text-4xl leading-none text-democrata-white">{party.president}</p>
-                <p className="mt-3 max-w-xs text-xs leading-relaxed text-democrata-white/75">
-                  Advogado e presidente do diretório municipal do {party.name} em {party.city}.
-                </p>
-              </figcaption>
-              <div className="pointer-events-none absolute inset-4 border border-democrata-white/70" />
-              <div className="pointer-events-none absolute inset-6 border border-democrata-green/80" />
+        <div className="border border-ink/10 bg-cream">
+          <Reveal className="flex flex-col gap-8 px-6 py-10 sm:flex-row sm:items-start sm:px-10 lg:px-12">
+            {/* Foto compacta */}
+            <figure className="relative w-32 shrink-0 overflow-hidden border border-democrata-blue/20 bg-democrata-blue shadow-dossier sm:w-36">
+              <div style={{ aspectRatio: "3/4" }} className="relative w-full">
+                <Image
+                  src="/dr-heitor.jpg"
+                  alt="Dr. Heitor de Abreu Oliveira — Presidente do PSD Guaíba"
+                  fill
+                  className="object-cover object-[center_10%]"
+                  sizes="160px"
+                  priority
+                />
+              </div>
+              <div className="pointer-events-none absolute inset-[3px] border border-democrata-white/50" />
             </figure>
-          </Reveal>
 
-          <Reveal delay={0.08} className="flex flex-col justify-center border border-ink/10 bg-cream px-6 py-10 sm:px-10 lg:border-l-0 lg:px-12">
+            {/* Conteúdo */}
+            <div className="flex flex-col justify-center">
             <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-democrata-blue">Liderança local</p>
             <h2 className="mt-4 font-display text-5xl leading-[0.95] text-ink sm:text-6xl">{party.president}</h2>
             <p className="mt-4 text-sm uppercase tracking-[0.18em] text-democrata-blue">
@@ -56,6 +51,7 @@ export function LiderancaLocal() {
                 </li>
               ))}
             </ul>
+            </div>
           </Reveal>
         </div>
       </div>
