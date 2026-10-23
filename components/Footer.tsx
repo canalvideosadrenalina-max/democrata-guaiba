@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Logo } from "@/components/Logo";
 import { nav, party } from "@/lib/content";
 
@@ -9,8 +10,19 @@ const channels = [
 
 export function Footer() {
   return (
-    <footer className="bg-democrata-white text-ink">
-      <div className="shell grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4">
+    <footer className="relative overflow-hidden bg-democrata-white text-ink">
+      {/* Logo decorativo no fundo */}
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center select-none" aria-hidden="true">
+        <div className="relative h-[420px] w-[420px] opacity-[0.07]">
+          <Image
+            src="/logo-democrata.png"
+            alt=""
+            fill
+            className="object-contain"
+          />
+        </div>
+      </div>
+      <div className="shell relative grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4">
         <div className="lg:col-span-1">
           <Logo tone="dark" />
           <p className="mt-5 max-w-xs text-sm leading-relaxed text-ink/70">
