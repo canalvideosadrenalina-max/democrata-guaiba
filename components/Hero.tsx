@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { ArrowIcon } from "@/components/Icons";
 import { Reveal } from "@/components/Reveal";
 import { heroFacts, party } from "@/lib/content";
@@ -59,17 +58,7 @@ export function Hero() {
           </div>
 
           <Reveal delay={0.18}>
-            <aside className="relative border border-white/15 bg-white/[0.03] p-6 sm:p-8">
-              {/* Logo decorativo no fundo — igual ao "35" gigante do hero */}
-              <div className="pointer-events-none absolute -bottom-16 -right-12 h-80 w-80 select-none opacity-[0.12] mix-blend-screen">
-                <Image
-                  src="/logo-democrata.png"
-                  alt=""
-                  fill
-                  className="object-contain"
-                  aria-hidden="true"
-                />
-              </div>
+            <aside className="border border-white/15 bg-white/[0.03] p-6 sm:p-8">
               <div className="flex items-start justify-between gap-4">
                 <p className="text-[11px] uppercase tracking-[0.26em] text-democrata-white/70">Nas urnas</p>
                 <p className="font-display text-6xl leading-none text-democrata-white">{party.number}</p>
