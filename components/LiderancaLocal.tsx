@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Reveal } from "@/components/Reveal";
 import { leadershipNotes, party } from "@/lib/content";
 
@@ -8,31 +9,19 @@ export function LiderancaLocal() {
         <div className="grid items-stretch gap-8 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] lg:gap-0">
           <Reveal className="lg:pr-10">
             <figure className="relative h-full min-h-[34rem] overflow-hidden border border-democrata-blue/20 bg-democrata-blue shadow-dossier">
-              <svg viewBox="0 0 360 520" className="absolute inset-0 h-full w-full" role="img" aria-label="Retrato institucional em estilo de medalhão, sem fotografia real">
-                <defs>
-                  <radialGradient id="studio-light" cx="50%" cy="28%" r="68%">
-                    <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.35" />
-                    <stop offset="42%" stopColor="#003F9E" />
-                    <stop offset="100%" stopColor="#003F9E" />
-                  </radialGradient>
-                </defs>
-                <rect width="360" height="520" fill="url(#studio-light)" />
-                <g fill="none" stroke="#FFFFFF" strokeOpacity="0.55">
-                  <ellipse cx="180" cy="188" rx="58" ry="72" strokeWidth="0.8" />
-                  <ellipse cx="180" cy="188" rx="46" ry="58" strokeWidth="0.6" />
-                  <ellipse cx="180" cy="188" rx="32" ry="42" strokeWidth="0.5" />
-                  <path d="M104 330c20-58 44-86 76-86s56 28 76 86" strokeWidth="0.8" />
-                  <path d="M72 410c32-86 68-124 108-124s76 38 108 124" strokeWidth="0.8" />
-                  <path d="M40 500c42-110 88-156 140-156s98 46 140 156" strokeWidth="0.7" />
-                </g>
-                <path d="M24 430c70 28 120 36 156 36s90-10 156-40" fill="none" stroke="#009640" strokeWidth="2" />
-              </svg>
+              <Image
+                src="/dr-heitor.jpg"
+                alt="Dr. Heitor de Abreu Oliveira — Presidente do PSD Guaíba"
+                fill
+                className="object-cover object-top"
+                sizes="(max-width: 1024px) 100vw, 40vw"
+                priority
+              />
               <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-democrata-blue via-democrata-blue/85 to-transparent p-6 pt-20">
-                <p className="text-[10px] uppercase tracking-[0.24em] text-democrata-white">Retrato a substituir</p>
-                <p className="mt-2 font-display text-4xl leading-none text-democrata-white">H. A. O.</p>
+                <p className="text-[10px] uppercase tracking-[0.24em] text-democrata-white">Presidente Municipal</p>
+                <p className="mt-2 font-display text-4xl leading-none text-democrata-white">{party.president}</p>
                 <p className="mt-3 max-w-xs text-xs leading-relaxed text-democrata-white/75">
-                  Medalhão institucional. A fotografia oficial do presidente municipal entra neste quadro, com a mesma
-                  proporção.
+                  Advogado e presidente do diretório municipal do {party.name} em {party.city}.
                 </p>
               </figcaption>
               <div className="pointer-events-none absolute inset-4 border border-democrata-white/70" />
