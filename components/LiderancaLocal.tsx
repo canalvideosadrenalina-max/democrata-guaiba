@@ -37,9 +37,8 @@ export function LiderancaLocal() {
                 desta gestão reúne dois ofícios: a advocacia e a liderança comunitária.
               </p>
               <p>
-                Não se publica aqui trajetória que o diretório ainda não documentou — datas de formatura, causas ou
-                mandatos. O que esta página afirma é o cargo, a formação jurídica e o vínculo com a cidade. O restante
-                da biografia entra quando o próprio diretório a revisar.
+                Evangélico, frequenta a Igreja Betel de Guaíba. A fé e o serviço comunitário caminham juntos na
+                trajetória pública do Dr. Heitor.
               </p>
             </div>
 
