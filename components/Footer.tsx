@@ -49,12 +49,12 @@ export function Footer() {
           <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-democrata-blue">Contato</p>
           <address className="mt-4 space-y-3 text-sm not-italic leading-relaxed text-ink/75">
             <p>
-              {party.city} · Rio Grande do Sul
+              {party.address}
               <br />
-              Região Metropolitana de Porto Alegre
+              {party.city}/RS · CEP {party.cep}
             </p>
-            <p>Sede, telefone e e-mail institucionais a confirmar pelo diretório. DDD 51.</p>
-            <p>Esta página não publica número que ainda não foi oficializado.</p>
+            <p className="text-[11px] uppercase tracking-[0.16em] text-ink/45">CNPJ {party.cnpj}</p>
+            <p>Telefone e e-mail a confirmar com o diretório.</p>
           </address>
         </div>
 

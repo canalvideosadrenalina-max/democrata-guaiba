@@ -6,6 +6,9 @@ export const party = {
   state: "RS",
   president: "Dr. Heitor de Abreu Oliveira",
   role: "Presidente Municipal",
+  cnpj: "30.862.762/0001-68",
+  address: "Av. Sete de Setembro, 583 · Centro",
+  cep: "92704-030",
 } as const;
 
 export const nav = [
